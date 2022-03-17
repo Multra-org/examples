@@ -28,7 +28,9 @@ server = aws.ec2.Instance('web-server-www',
     instance_type=size,
     vpc_security_group_ids=[group.id],
     user_data=user_data,
-    ami=ami.id)
+    ami=ami.id
+    tags={"Name":"Test"}
+    )
 
 pulumi.export('public_ip', server.public_ip)
 pulumi.export('public_dns', server.public_dns)
