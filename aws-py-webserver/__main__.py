@@ -28,7 +28,7 @@ server = aws.ec2.Instance('web-server-www',
     instance_type=size,
     vpc_security_group_ids=[group.id],
     user_data=user_data,
-    ami=ami.id
+    ami=ami.id,
     tags={"Name":"Test"}
     )
 
